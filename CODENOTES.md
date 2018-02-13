@@ -26,4 +26,23 @@ the process of taking an AST and turning it into executable code. This part vari
 
 Note : The JavaScript engine is vastly more complex than just those three steps, as are most other language compilers
 
-##### Compiler theory
+##### Understanding Scope
+
+## Aantekeningen les
+### Les 2
+
+LHS = Left_Hand_Side
+RHS = Right_Hand_Side
+
+Variables leven in een scope.
+Bijvoorbeeld : functie scope, de variable b leeft in de function scope, deze variable b is niet bereikbaar buiten function foo.
+
+Function foo(){
+  var b= "b";
+}
+
+de variable d leeft globale function scope van window, in het gehele window bereikbaar.
+
+var d="d";
+
+Scopes worden afgelopen naar boven toe.
