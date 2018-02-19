@@ -28,6 +28,91 @@ Note : The JavaScript engine is vastly more complex than just those three steps,
 
 ##### Understanding Scope
 
+## You Don't Know JS: Scope & Closures
+### chapter 1 : Types
+>a type is an intrinsic, built-in set of characteristics that >uniquely identifies the behavior of a particular value and >distinguishes it from other values, both to the engine and >to the developer.
+
+42 = Number
+"42" = String
+Two values with different types.
+
+JavaScript defines seven built-in types:
+* null
+* undefined
+* boolean
+* number
+* string
+* object
+* symbol -- added in ES6!
+
+typeof inspects the type of a given value.
+
+Functions are referred to as callabale objects (subtype of objects).
+The function object has a **length**, the parameters.
+Example function a(b,c) = length 2. b and c = 2.
+
+Arrays are not a subtype and just objects.
+
+Variables dont have types because they hold values and only values have types!
+
+Example :
+var a = 42;
+typeof a; // "number"
+
+a = true;
+typeof a; // "boolean"
+
+**undefined vs "undeclared"**
+
+var a;
+
+a; // undefined
+b; // ReferenceError: b is not defined/undeclared
+
+If you want to check variable in the global use (window.variable)
+
+### chapter 2 : Values
+Basic values/building blocks :
+* Arrays
+* Stings
+* numbers
+
+**Arrays**
+A array is just a container for another type of value, from string to number to object to even another array (which is how you get multidimensional arrays).
+
+Generally, it's not a great idea to add string keys/properties to arrays. Use objects for holding values in keys/properties, and save arrays for strictly numerically indexed values.
+
+**Strings**
+JavaScript strings are immutable, while arrays are quite mutable.
+
+Mutable = Changeable.
+
+Another workaround (aka hack) is to convert the string into an array, perform the desired operation, then convert it back to a string.
+
+>var c = a
+	>// split `a` into an array of characters
+	>.split( "" )
+	>// reverse the array of characters
+	>.reverse()
+	>// join the array of characters back to a string
+	.join( "" );
+
+>c; // "oof"
+
+ **Numbers**
+Specify how many fractional decimal places you want :
+var a = 42.59;
+
+a.toFixed( 0 ); // "43"
+a.toFixed( 1 ); // "42.6"
+a.toFixed( 2 ); // "42.59"
+a.toFixed( 3 ); // "42.590"
+a.toFixed( 4 ); // "42.5900"
+
+numbers include several special values, like NaN (supposedly "Not a Number", but really more appropriately "invalid number"); +Infinity and -Infinity; and -0.
+
+Simple scalar primitives (strings, numbers, etc.) are assigned/passed by value-copy, but compound values (objects, etc.) are assigned/passed by reference-copy. References are not like references/pointers in other languages -- they're never pointed at other variables/references, only at the underlying values.
+
 ## Aantekeningen les
 ### Les 2
 
