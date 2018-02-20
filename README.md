@@ -1,6 +1,6 @@
 # About this repository
 # Best practices
-Find best practices[here](https://www.belatrixsf.com/blog/best-practices-for-front-end-coding/)
+Find best practices [here](https://www.belatrixsf.com/blog/best-practices-for-front-end-coding/)
 ##### CSS
 1. Avoid units on zero values.
 2. 
