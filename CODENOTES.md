@@ -56,11 +56,13 @@ Arrays are not a subtype and just objects.
 Variables dont have types because they hold values and only values have types!
 
 Example :
+``` javascript
 var a = 42;
 typeof a; // "number"
 
 a = true;
 typeof a; // "boolean"
+``` 
 
 **undefined vs "undeclared"**
 
@@ -91,19 +93,22 @@ Mutable = Changeable.
 
 Another workaround (aka hack) is to convert the string into an array, perform the desired operation, then convert it back to a string.
 
->var c = a
-	>// split `a` into an array of characters
-	>.split( "" )
-	>// reverse the array of characters
-	>.reverse()
-	>// join the array of characters back to a string
+``` javascript
+var c = a
+	// split `a` into an array of characters
+	.split( "" )
+	// reverse the array of characters
+	.reverse()
+	// join the array of characters back to a string
 	.join( "" );
 
->c; // "oof"
+c; // "oof"
+```
 
  **Numbers**
 
 Specify how many fractional decimal places you want :
+``` javascript
 var a = 42.59;
 
 a.toFixed( 0 ); // "43"
@@ -111,6 +116,7 @@ a.toFixed( 1 ); // "42.6"
 a.toFixed( 2 ); // "42.59"
 a.toFixed( 3 ); // "42.590"
 a.toFixed( 4 ); // "42.5900"
+```
 
 numbers include several special values, like NaN (supposedly "Not a Number", but really more appropriately "invalid number"); +Infinity and -Infinity; and -0.
 
@@ -139,6 +145,7 @@ Values that are typeof "object" (such as an array) are additionally tagged with 
 
 In general, there's basically no reason to use the object form directly. It's better to just let the boxing happen implicitly where necessary. In other words, never do things like new String("abc"), new Number(42), etc -- always prefer using the literal primitive values "abc" and 42.
 
+``` javascript
 var a = "abc";
 var b = new String( a );
 var c = Object( a );
@@ -149,6 +156,7 @@ typeof c; // "object"
 
 b instanceof String; // true
 c instanceof String; // true
+```
 
 Object.prototype.toString.call( b ); // "[object String]"
 Object.prototype.toString.call( c ); // "[object String]"
@@ -183,7 +191,7 @@ All of JavaScript's values can be divided into two categories:
 2. everything else (which will obviously become true)
 
 **Explicit coercion**
-
+``` javascript
 var a = 42;
 var b = String( a );
 
@@ -192,6 +200,7 @@ var d = Number( c );
 
 b; // "42"
 d; // 3.14
+```
 
 putting **+** before something can make it a number.
 **Example :**
@@ -211,6 +220,25 @@ Implicit coercion is coercion that is "hidden" as a side-effect of some other op
 
 Especially for implicit, coercion must be used responsibly and consciously. Know why you're writing the code you're writing, and how it works. Strive to write code that others will easily be able to learn from and understand as well.
 
+### Chapter 5 : Grammar
+
+The grammar for JavaScript is a structured way to describe how the syntax (operators, keywords, etc.) fits together into well-formed, valid programs.
+
+Every expression in JS can be evaluated down to a single, specific value result. For example:
+
+``` javascript
+var a = 3 * 6;
+var b = a;
+b;
+```
+
+In this snippet, 3 * 6 is an expression (evaluates to the value 18). But a on the second line is also an expression, as is b on the third line. The a and b expressions both evaluate to the values stored in those variables at that moment, which also happens to be 18.
+
+Moreover, each of the three lines is a statement containing expressions.
+
+
+
+
 ## Aantekeningen les
 ### Les 2
 
@@ -229,3 +257,16 @@ de variable d leeft globale function scope van window, in het gehele window bere
 var d="d";
 
 Scopes worden afgelopen naar boven toe.
+
+### Les 5
+
+``` javascript
+var clowns = [] // literal array
+var clown = {   // literal object
+  name: 'Pipo',    
+  shoeSize: 80,  
+  laugh: function(){
+    console.log('ik heet ' + this.name + ' whoehahaah')
+    }
+  }             // literal object
+  ```
